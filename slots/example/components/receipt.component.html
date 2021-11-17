@@ -1,0 +1,39 @@
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">
+                <div *put="slot('title')" colspan="2"></div>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th colspan="2">Totals</th>
+        </tr>
+        <tr>
+            <th>Diner</th>
+            <th>Owed</th>
+        </tr>
+        <tr *ngFor="let slot of slots('diner')">
+            <td>
+                <div *put="slot"></div>
+            </td>
+            <td></td>
+        </tr>
+    </tbody>
+
+    <tbody>
+        <tr>
+            <th colspan="2">Items</th>
+        </tr>
+        <tr *ngFor="let slot of slots()">
+            <td>
+                <div *put="slot"></div>
+            </td>
+            <td>
+                {{ slot.data?.cost | currency }}
+            </td>
+        </tr>
+    </tbody>
+</table>

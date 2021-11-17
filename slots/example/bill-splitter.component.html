@@ -1,0 +1,15 @@
+<h1>Bill Splitter</h1>
+
+<receipt>
+    <h2 *slot="'title'">Our Receipt</h2>
+
+    <p *slot="'diner'">Alice</p>
+
+    <p *slot="['diner', {tip: 20}]">Bob</p>
+
+    <ng-template [slot]="{cost: 5.00}" let-data>Hamburger</ng-template>
+
+    <ng-template [slot]="{cost: 5.50}" let-data>Cheeseburger</ng-template>
+
+    <ng-template [slot]="{cost: 2.50}" let-data>Fries</ng-template>
+</receipt>
